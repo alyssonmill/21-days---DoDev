@@ -26,21 +26,30 @@
 //     console.log(i)
 // }
 
+// for(let i = numbers[0];i <= numbers[9]; i++){
+//     console.log(i)
+// }
+
 ////////////////////3////////////////////
 
 // 3 - Refaça o script anterior, mas agora pergunte ao usuário quantos números ele deseja inserir no array. Depois, o usuário vai 
 // preenchendo elemento por elemento do vetor, ao final, exiba o array e o array ao contrário
 
-let userInsert = prompt("How many numbers? ")
+// let userInsert = prompt()
+let userInsert
+let position = 0;
 let numbers = [];
-let userNumber 
+numbers.length = parseInt(prompt("How many numbers? "));
 
-let condition = true;
+while(numbers.length){
+    userInsert = prompt("Insert a number");
+    numbers[position] = userInsert;
 
-while (condition) {
-    if (numbers === numbers[userNumber]) {
-        condition == false;
+    if (numbers.length == numbers) {
+        break;
     }
+
+    position++
 }
 
 
