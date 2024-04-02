@@ -31,3 +31,24 @@
 // 3 - Refaça o script anterior, mas agora pergunte ao usuário quantos números ele deseja inserir no array. Depois, o usuário vai 
 // preenchendo elemento por elemento do vetor, ao final, exiba o array e o array ao contrário
 
+let userInsert = prompt("How many numbers? ")
+let numbers = [];
+let userNumber 
+
+let condition = true;
+
+while (condition) {
+    if (numbers === numbers[userNumber]) {
+        condition == false;
+    }
+}
+
+
+
+
+///////////////////4////////////////////
+
+
+
+
+
