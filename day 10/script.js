@@ -4,14 +4,14 @@
 // let numbers = [];
 // let userInsert 
 // let position = 0;
-// let ahead
+// let cond
 
 // while (condition) {
 //     userInsert = prompt("Insert a number");
 //     numbers[position] = userInsert;
 
-//     ahead = prompt("Insert 1 to ahead");
-//     if (ahead != "1") {
+//     cond = prompt("Insert 1 if u want more numbers");
+//     if (cond != "1") {
 //         condition = false;
 //     }
 
@@ -32,40 +32,29 @@
 
 ////////////////////3////////////////////
 
-// 3 - Refaça o script anterior, mas agora pergunte ao usuário quantos números ele deseja inserir no array. Depois, o usuário vai 
-// preenchendo elemento por elemento do vetor, ao final, exiba o array e o array ao contrário
+// let userInsert
+// let userLimit = parseInt(prompt("How many numbers? "));
+// let position = 0;
+// let numbers = [];
 
-// let userInsert = prompt()
+// numbers.length = userLimit;
 
-let userInsert
-let userLimit = parseInt(prompt("How many numbers? "));
-let position = 0;
-let numbers = [];
+// while(position < userLimit){
+//     userInsert = prompt("Insert a number");
+//     numbers[position] = userInsert;
 
-numbers.length = userLimit;
+//     position++
+// }
 
-while(position < userLimit){
-    userInsert = prompt("Insert a number");
-    numbers[position] = userInsert;
+// for(let i = numbers[userLimit - 1]; i >= numbers[0]; i--){
+//     console.log(i)
+// }
 
-    position++
-}
+// console.log("------------------");
 
-for(let i = numbers[userLimit - 1]; i >= numbers[0]; i--){
-    console.log(i)
-}
-
-console.log("------------------");
-
-for(let i = numbers[0];i <= numbers[userLimit - 1]; i++){
-    console.log(i)
-}
-
-
-
-
-
-///////////////////4////////////////////
+// for(let i = numbers[0];i <= numbers[userLimit - 1]; i++){
+//     console.log(i)
+// }
 
 
 
