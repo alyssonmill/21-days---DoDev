@@ -36,21 +36,31 @@
 // preenchendo elemento por elemento do vetor, ao final, exiba o array e o array ao contrário
 
 // let userInsert = prompt()
+
 let userInsert
+let userLimit = parseInt(prompt("How many numbers? "));
 let position = 0;
 let numbers = [];
-numbers.length = parseInt(prompt("How many numbers? "));
 
-while(numbers.length){
+numbers.length = userLimit;
+
+while(position < userLimit){
     userInsert = prompt("Insert a number");
     numbers[position] = userInsert;
 
-    if (numbers.length == numbers) {
-        break;
-    }
-
     position++
 }
+
+for(let i = numbers[userLimit - 1]; i >= numbers[0]; i--){
+    console.log(i)
+}
+
+console.log("------------------");
+
+for(let i = numbers[0];i <= numbers[userLimit - 1]; i++){
+    console.log(i)
+}
+
 
 
 
