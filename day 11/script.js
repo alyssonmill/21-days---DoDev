@@ -7,8 +7,8 @@
 // 4 - No final exiba a nota de cada aluno, a soma das notas e a média geral da turma. 
 // Para calcular a média deve dividir a soma das notas pelo total de alunos.
 
-let studentNames = ["Aly", "Eva", "Erick", "Enzo", "Erick"];
-let studentScores = ["5", "5", "5", "5", "5"]
+let studentNames = [];
+let studentScores = []
 
 let students = 0;
 let condition = true; 
@@ -19,12 +19,12 @@ let n = 0;
 let avg
 
 while(condition){
-    // userNames = prompt("Insert the name");
-    // userScores = parseInt(prompt("Insert the score"));
+    userNames = prompt("Insert the name");
+    userScores = parseInt(prompt("Insert the score"));
     cond = prompt ("Would you like to add another student ? (If so, press 1)");
 
-    // studentNames[students] = userNames;
-    // studentScores[students] = userScores;
+    studentNames[students] = userNames;
+    studentScores[students] = userScores;
 
     if (cond != "1") {
         break;
@@ -34,13 +34,13 @@ while(condition){
 
 }
 
-// for(let i = 0; i < studentScores.length; i++){
-//     n += parseFloat(studentScores[i]);
-//     avg = n / studentNames.length; 
-// }
+for(let i = 0; i < studentScores.length; i++){
+    n += parseFloat(studentScores[i]);
+    avg = n / studentNames.length; 
+}
 
-for(let i = 0; i <= studentNames.length && studentScores.length ; i++){
+for(let i = 0; i < studentNames.length && studentScores.length ; i++){
     console.log(studentNames[i] + " - " + studentScores[i])
 }
 
-// console.log("Avarege score: " + avg);
+console.log("Avarege score: " + avg);
