@@ -1,15 +1,3 @@
-// 1 - Crie 2 arrays: um para nomes e um para senhas
-
-// 2- Solicite ao seu usuário o que ele deseja fazer: cadastrar, 
-// fazer login, excluir um cadastro ou encerrar o programa.
-
-// 3 - Faça o fluxo de funcionamento do código, considere que o 
-// usuário pode escolher quando encerrar o programa conforme as opções.
-
-// 4 - Se a opção escolhida for cadastro, solicite dois valores 
-// ao usuário, um nome e uma senha e guarde cada um no seu respectivo array.
-
-
 let names = [];
 let pass = [];
 let userOp 
@@ -20,28 +8,47 @@ let userPass
 let condition = true;
 
 while (condition) {
-    userOp = prompt("Insert 1 - sigh-up 2 - long-in 3 - delete 4 - End the system")
+    userOp = prompt("1-sigh-up | 2-long-in | 3-delete | 4-End the system")
 
     switch (userOp) {
         case "1":
-            userName = "Claudio"
-            userPass = "123"
+            userName = prompt("Insert a name");
+            userPass = prompt("Insert a pass");
 
-            names = userName;
-            pass = userPass;
+            names.push(userName);
+            pass.push(userPass);
 
-            
-
-            console.log("Working Well")
             break;
-    
-        default:
-            break;
-    }
+        
+        case "2":
 
-    userCond = prompt("Insert 1 to sign up another one")
-    if (userOp != "4" ) {
-        break;
+            userName = prompt("Insert a name");
+            userPass = prompt("Insert a pass");
+
+            if (userName = names && userPass == pass) {
+                console.log("Well Done");
+                continue;
+            }else{
+                console.log("Insert a valid details");
+                continue;
+            }
+        
+        case "3":
+            userName = prompt("Insert a name to remove");
+            userPass = prompt("Insert a pass to remove");
+
+            let userIndex = names.indexOf(userName);
+            let passIndex = pass.indexOf(userPass);
+
+            if (userIndex !== -1 && passIndex !== -1) {
+                names.splice(userIndex, 1);
+                pass.splice(passIndex, 1);
+                console.log("User removed successfully.");
+
+            }else{
+                console.log("Insert a valid details");
+                continue;
+            }
     }
 }
 
