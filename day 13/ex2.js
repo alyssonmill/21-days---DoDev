@@ -18,20 +18,18 @@
 
 //    A função deve retornar esse resultado;4
 
-let distancia = 1000;
-let result 
+let distance = 1000;
 let cName
 let power
 let maxSpeed
 let acceleration
-let calc
 
 class Car {
     cName
     power
     maxSpeed
     acceleration
-    calc
+    
 
     constructor(cName, power, maxSpeed, acceleration){
         this.cName = cName;
@@ -39,22 +37,25 @@ class Car {
         this.maxSpeed = maxSpeed;
         this.acceleration = acceleration;
     }
+
+    calc(distance) {
+        const result = distance / (this.maxSpeed / this.acceleration)    
+        return result;  
+    }
 }
 
-function calc (distancia, maxSpeed, acceleration){
-    result = distancia / (maxSpeed / acceleration)
+// function calc (distancia, maxSpeed, acceleration){
+//     result = distancia / (maxSpeed / acceleration);
 
-    return result;
-}
-
-
+//     return result;
+// }
 
 cName = "Ferrari";
 power = "200";
 maxSpeed = "300";
 acceleration = "4";
 
-let n = new Car (cName, power, maxSpeed, acceleration, calc());
-console.log(n)
+let n = new Car (cName, power, maxSpeed, acceleration);
+console.log(n.calc(distance))
 
 
