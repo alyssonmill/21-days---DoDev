@@ -1,35 +1,15 @@
-// - Crie uma classe Carro com as seguintes propriedades:
-
-
-// Nome - qual a equipe do carro Ferrari, Mercedes, McLaren, etc;
-// Potencia - número de cavalos de potência do carro;
-// VelocidadeMaxima - qual a maior velocidade que o carro pode alcançar;
-// Aceleracao - o tempo em segundos que o carro leva para ir de 0 a 100 km/h
-
-
-// 2 - Adicione na classe carro um método que recebe como parâmetro uma 
-// distância em metros e calcula o tempo em segundos para percorrer essa 
-// distância. Use a seguinte fórmula para o cálculo: 
-
-
-//  resultado = distância / (VelocidadeMaxima / Aceleracao). 
-
-
-
-//    A função deve retornar esse resultado;4
-
 let distance = 1000;
 let cName
 let power
 let maxSpeed
 let acceleration
+let result
 
 class Car {
     cName
     power
     maxSpeed
     acceleration
-    
 
     constructor(cName, power, maxSpeed, acceleration){
         this.cName = cName;
@@ -40,22 +20,41 @@ class Car {
 
     calc(distance) {
         const result = distance / (this.maxSpeed / this.acceleration)    
-        return result;  
+        return `Car: ${this.cName}, Power: ${this.power}, Max Speed: ${this.maxSpeed}, Acceleration: ${this.acceleration}, Time taken to cover ${distance} meters: ${result} seconds`;;  
     }
 }
 
-// function calc (distancia, maxSpeed, acceleration){
-//     result = distancia / (maxSpeed / acceleration);
+class Race {
+    rName
+    type
+    distance
+    participants
+    winner
+    calc
 
-//     return result;
-// }
+    constructor(rName, type, distance, participants, winner, calc){
+        this.rName = rName;
+        this.type = type;
+        this.distance = distance;
+        this.participants = participants;
+        this.winner = winner;
+        this.calc = calc;
+    }
+
+}
 
 cName = "Ferrari";
 power = "200";
 maxSpeed = "300";
 acceleration = "4";
 
-let n = new Car (cName, power, maxSpeed, acceleration);
-console.log(n.calc(distance))
+let car1 = new Car ("Ferrari", "200", "300", "4");
+
+let car2 = new Car ("Mercedez", "225", "275", "3");
+
+console.log(car1.calc(distance));
+console.log(car2.calc(distance));
+
+
 
 
