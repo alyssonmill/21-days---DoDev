@@ -40,24 +40,6 @@ function info() {
     increase()
 }
 
-// epois de calcular o aumento você deve exibir: o nome do colaborador, o salário, a % de aumento e o salário reajustado.
-
-
-// 4 - Crie uma função que  deve ser chamada no final da função que calcula o reajuste salarial, essa função deve perguntar se o usuário deseja calcular novamente com 
-// novas informações.
-
-
-// 5 - Para testar basta chamar a primeira função criada, e as outras serão chamadas na sequência conforme a execução do código
-
-
-//  * Para calcular o aumento, faça o valor do salário multiplicado
-
-//    pela porcentagem em decimal. 
-
-//      Ex.: salário R$1.000,00 aumento de 10%   |   salário R$1.000,00 aumento de 15%
-
-//           1000 * 1.10 = 1100                  |   1000 * 1.15 =   1150
-
 info();
 
 
