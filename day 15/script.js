@@ -1,3 +1,4 @@
+
 function a (arrayA,arrayB){
     let commomNumbers = [];
 
