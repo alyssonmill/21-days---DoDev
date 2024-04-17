@@ -27,18 +27,43 @@ class Reservation {
 }
 
 
-let hotels = [];
-let reservations = [];
 
+let hotels = [];
+let reservations = ["123"];
+let hotelId = 0;
+let reservId = 0;
 
 function registerHotel (hotelId, hotelName, categoria, address, phone) {
-    const hotel = new Hotel (hotelId, hotelName, categoria, address, phone);
+    const newHotel = new Hotel (hotelId, hotelName, categoria, address, phone);
 
-    hotels.forEach(hotel => {
-        console.log(); 
-    });
+    if (hotels.includes(newHotel)) {
+        alert("You can not add the same hostel")
+    }else {
+        hotels.push(newHotel)
+    }
 
-    return hotel;
+    return newHotel;
 }
 
-let one = registerHotel("123", "AZUL", "PRETO", "BRANCO", "555");
+function registerReserv (reservId, hotelId, reservName, checkIn, checkOut) {
+    const newReservation = new Reservation (reservId, hotelId, reservName, checkIn, checkOut);
+
+    if (reservations.includes(newReservation)) {
+        alert("You can not add the same hostel")
+    }else {
+        reservations.push(newReservation)
+    }
+
+    return newReservation;
+}
+
+function showReserv(reservId) {
+
+    if (reservations.includes(reservId)) {
+        console.log("These are your reservations: " + reservations)
+    }
+}
+
+let s = showReserv("123")
+
+
