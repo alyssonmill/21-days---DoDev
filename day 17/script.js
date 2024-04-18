@@ -1,13 +1,5 @@
-// 2 - Crie funções para cadastrar um hotel e uma reserva;
-
-// 3 - Crie uma função que recebe como parâmetro o id do hotel e exibe na tela todas as
-//  reservas neste hotel com as seguintes informações: nome do hotel - nome do responsável da reserva - dia de entrada - dia de saída
-
-// 4 - Crie uma função que recebe como parâmetro o id de uma reserva e exibe no console: nome do hotel - endereço - 
-// dia de entrada - dia de saída
-
 class Hotel {
-    constructor(hotelId, hotelName, categoria, address, phone){
+    constructor(hotelId, hotelName, categoria, address, phone) {
         this.hotelId = hotelId;
         this.hotelName = hotelName;
         this.categoria = categoria;
@@ -17,7 +9,7 @@ class Hotel {
 }
 
 class Reservation {
-    constructor(reservId, hotelId, reservName, checkIn, checkOut){
+    constructor(reservId, hotelId, reservName, checkIn, checkOut) {
         this.reservId = reservId;
         this.hotelId = hotelId;
         this.reservName = reservName;
@@ -26,31 +18,33 @@ class Reservation {
     }
 }
 
-
-
 let hotels = [];
-let reservations = ["123"];
-let hotelId = 0;
-let reservId = 0;
+let reservations = [];
+let hotelId 
+let reservId 
 
-function registerHotel (hotelId, hotelName, categoria, address, phone) {
-    const newHotel = new Hotel (hotelId, hotelName, categoria, address, phone);
+function registerHotel(hotelId, hotelName, categoria, address, phone) {
+    const newHotel = new Hotel(hotelId, hotelName, categoria, address, phone);
 
     if (hotels.includes(newHotel)) {
         alert("You can not add the same hostel")
-    }else {
+    } else {
         hotels.push(newHotel)
     }
+
+    do {
+        hotelId = generateRandomId();
+    } while (!idUnique(hotelId,hotels));
 
     return newHotel;
 }
 
-function registerReserv (reservId, hotelId, reservName, checkIn, checkOut) {
-    const newReservation = new Reservation (reservId, hotelId, reservName, checkIn, checkOut);
+function registerReserv(reservId, hotelId, reservName, checkIn, checkOut) {
+    const newReservation = new Reservation(reservId, hotelId, reservName, checkIn, checkOut);
 
     if (reservations.includes(newReservation)) {
         alert("You can not add the same hostel")
-    }else {
+    } else {
         reservations.push(newReservation)
     }
 
@@ -58,12 +52,95 @@ function registerReserv (reservId, hotelId, reservName, checkIn, checkOut) {
 }
 
 function showReserv(reservId) {
-
     if (reservations.includes(reservId)) {
         console.log("These are your reservations: " + reservations)
     }
 }
 
-let s = showReserv("123")
+function showName(reservName) {
+    if (reservations.includes(reservId)) {
+        console.log("These are your reservations: " + reservations)
+    }
+}
+
+function showCategoria(categoria) {
+    let filterHotel = hotels.filter( hotel => {
+        return hotel.categoria === categoria;
+    })
+
+    if (filterHotel > 0) {
+        console.log(`Hotéis na categoria "${categoria}":`);
+        filterHotel.forEach(hotel => {
+            console.log(`- ${hotel.nome}`);
+        })
+    }else {
+        console.log(`Não foram encontrados hotéis na categoria "${categoria}".`);
+    }
+}
+
+function showPhone(hotelId, phone) {
+    const hotel = hotels.find(h => h.id === hotelId)
+
+    if (hotel && !hotel.phone.includes(phone)) {
+        hotel.phone.push
+    }
+}
+
+function generateRandomId() {
+    return  Math.floor(Math.random() * 9000) + 1000;  
+}
+
+function idUnique (id, hotels){
+    return !hotels.some(hotel => hotel.id === id);
+}
+
+let condition = true;
+
+while (condition) {
+    let userOp = prompt("1-resgister a new hotel | 2-register a new reservation | 3-show reservs by name | 4-show reservs by id | 5-show reservs by categoria | 6- change the phone number")
+
+    switch (userOp) {
+        case "1":
+            hotelName = "Palace"
+            categoria = "Luxo"
+            address = "d15vy09" 
+            phone = "555"
+
+            // USER PROMPTS
+            // hotelName = prompt("Insert the hotel name");
+            // categoria = prompt("Insert the categoria");
+            // address = prompt("Insert the address"); 
+            // phone = prompt("Insert the phone");
+
+            console.log(registerHotel(hotelId, "Palace", "Luxo", "d15vy09", "555"));
+            console.log(registerHotel(hotelId, "Prime", "Fino", "d15VCV0", "123"));
+
+
+            // console.log(id);
+
+        case "2":
+            console.log(hotelId)
+            condition = false
+
+
+        break;
+    }
+
+}
+
+// - Crie uma função que recebe como parâmetro o nome de uma pessoa e exibe na tela todas as suas reservas;
+
+// 6 - Crie uma função que recebe como parâmetro uma categoria e retorna um array com todos os hotéis nessa categoria;
+
+// 7 - Crie uma função que recebe o id de um hotel e um telefone como parâmetro, a função deve atualizar o telefone de cadastro com o número recebido;
+
+// 8 - Crie um fluxo de funcionamento para o algoritmo, o usuário deve poder escolher quando encerrar o programa.
+
+// Regras:
+// O id não pode ser igual a nenhum outro já existente;
+// O dia de entrada não pode ser maior que o de saída;
+// No cadastro de uma reserva o id do hotel deve ser válido, ou seja, não deve permitir o cadastro de um hotel que não esteja no sistema;
+
+
 
 
