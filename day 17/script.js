@@ -127,15 +127,15 @@ while (condition) {
     let newPhone
     switch (userOp) {
         case "1":
-            // let hotelName = prompt("Insert the hotel name");
-            // let category = prompt("Insert the category");
-            // let address = prompt("Insert the address");
-            // let phone = prompt("Insert the phone");
+            let hotelName = prompt("Insert the hotel name");
+            let category = prompt("Insert the category");
+            let address = prompt("Insert the address");
+            let phone = prompt("Insert the phone");
 
-            let hotelName = "Palace"
-            category = "Luxo"
-            let address = "d15vy09"
-            phone = "555"
+            // let hotelName = "Palace"
+            // category = "Luxo"
+            // let address = "d15vy09"
+            // phone = "555"
 
             console.log(registerHotel(hotelId, hotelName, category, address, phone));
             break;
