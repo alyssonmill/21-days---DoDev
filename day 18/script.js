@@ -1,15 +1,23 @@
-// 1 - Crie uma classe Livro com as seguintes propriedades:
-// Titulo - qual o nome do livro;
-// Autor- quem escreveu o livro;
-// Editora - qual empresa que publicou o livro;
-// Ano de publicação - o ano em que o livro foi publicado;
-// Disponibilidade - se o livro está disponível ou não (verdadeiro ou falso);
+// - Crie uma classe Biblioteca com as seguintes propriedades:
+//    - Nome - nome da biblioteca;
+//    - Endereco - onde a biblioteca fica localizada;
+//    - Telefone - telefone de contato da biblioteca;
+//    - Acervo de livros - todos os livros que existem na biblioteca
 
-// 2 - Crie um método construtor para a classe Livro que recebe como parâmetro as 
-// informações que serão atribuídas as propriedades, com exceção de “Disponibilidade” 
-// que deve ter por padrão o valor “true” quando o objeto for criado
+// 5 - Crie um método construtor para a classe Biblioteca que deve receber 
+// como parâmetro as informações que serão atribuídas as propriedades, a 
+// propriedade Acervo de Livros deve receber um array;
 
-// 3 - Crie alguns objetos da classe Livro e adicione-os em um array;
+
+// 6 - Adicione na classe Biblioteca um método para buscar um livro 
+// específico, deve passar como parâmetro o nome do livro e exibir no 
+// console todas as informações de um livro;
+
+
+// DESAFIO DIA #17:
+
+// Biblioteca DoDev pt.2
+
 class Book {
     titlle
     autor
@@ -29,6 +37,24 @@ class Book {
     }
 }
 
+class Library {
+    name
+    addres
+    phone
+    qtdBook
+    constructor(name,addres,phone,qtdBook){
+        this.name = name;
+        this.addres = addres;
+        this.phone = phone;
+        this.qtdBook = [];
+    }
+
+    searchBook (tittle){
+        
+        console.log("Hello World")
+    }
+}
+
 let books = [];
 
 function registerBook (titlle,autor,editora,anoPubli,disp){
@@ -38,6 +64,8 @@ function registerBook (titlle,autor,editora,anoPubli,disp){
 
     return newBook;
 }
+
+
 
 let book1 = registerBook("a","b","c","d","");
 let book2 = registerBook("A","B","C","D","");
