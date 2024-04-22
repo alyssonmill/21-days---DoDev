@@ -1,78 +1,76 @@
-// - Crie uma classe Biblioteca com as seguintes propriedades:
-//    - Nome - nome da biblioteca;
-//    - Endereco - onde a biblioteca fica localizada;
-//    - Telefone - telefone de contato da biblioteca;
-//    - Acervo de livros - todos os livros que existem na biblioteca
-
-// 5 - Crie um método construtor para a classe Biblioteca que deve receber 
-// como parâmetro as informações que serão atribuídas as propriedades, a 
-// propriedade Acervo de Livros deve receber um array;
-
-
-// 6 - Adicione na classe Biblioteca um método para buscar um livro 
-// específico, deve passar como parâmetro o nome do livro e exibir no 
-// console todas as informações de um livro;
-
-
-// DESAFIO DIA #17:
-
-// Biblioteca DoDev pt.2
-
 class Book {
-    titlle
-    autor
-    editora
-    anoPubli
-    disp
-    constructor(titlle,autor,editora,anoPubli,disp){
-        this.titlle = titlle;
-        this.autor = autor;
-        this.editora = editora;
-        this.anoPubli = anoPubli;
-        this.disp = true;
+    constructor(title, author, publisher, publicationYear, available){
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.available = available; 
     }
 
-    a (titlle,autor,editora,anoPubli,disp){
+    a(title, author, publisher, publicationYear, available){
         console.log("Hello World")
     }
 }
 
 class Library {
-    name
-    addres
-    phone
-    qtdBook
-    constructor(name,addres,phone,qtdBook){
+    constructor(name, address, phone, qtdBook){
         this.name = name;
-        this.addres = addres;
+        this.address = address;
         this.phone = phone;
-        this.qtdBook = [];
+        this.books = [];
     }
 
-    searchBook (tittle){
-        
-        console.log("Hello World")
+    searchBook(title){
+        let foundBook = this.books.find(book => book.title === title);
+
+        if (foundBook) {
+            console.log("Name: " + foundBook.title);
+            console.log("Author: " + foundBook.author);
+            console.log("Available: " + foundBook.available);
+        } else {
+            alert("There is not a book with this name");
+        }
+    }
+
+    borrowBook(title){
+        const foundBook = this.books.find(book => book.title === title);
+
+        if (foundBook) {
+            foundBook.available = false;
+            console.log("Book borrowed !");
+        } else {
+            console.log("Book not found.");
+        }
+    }
+
+    devolution(title){
+        const foundBook = this.books.find(book => book.title === title);
+
+        if (foundBook) {
+            foundBook.available = true;
+            console.log("Book returned !");
+        } else {
+            console.log("Book not found.");
+        }
     }
 }
 
 let books = [];
 
-function registerBook (titlle,autor,editora,anoPubli,disp){
-    const newBook = new Book(titlle,autor,editora,anoPubli,disp)
-
+function registerBook(title, author, publisher, publicationYear, available){
+    const newBook = new Book(title, author, publisher, publicationYear, available);
     books.push(newBook);
-
     return newBook;
 }
 
+let library = new Library("My Library", "123 Main St", "555-1234");
 
+let book1 = registerBook("a", "b", "c", "d", true);
+let book2 = registerBook("A", "B", "C", "D", true);
 
-let book1 = registerBook("a","b","c","d","");
-let book2 = registerBook("A","B","C","D","");
+library.books.push(book1, book2);
 
-
-
-
-
-
-
+library.borrowBook("a");
+library.searchBook("a");
+library.devolution("a");
+library.searchBook("a");
